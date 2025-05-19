@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: taco-cloud
+
+  #  thymeleaf
+  thymeleaf:
+    cache: false
+
+  #  data
+  datasource:
+    generate-unique-name: false
+    name: tacocloud
+    password: sa
