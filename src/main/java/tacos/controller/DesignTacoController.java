@@ -14,11 +14,9 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import tacos.data.IngredientRepository;
 import tacos.domain.Ingredient;
 import tacos.domain.IngredientType;
-import tacos.domain.Ingredients;
 import tacos.domain.Taco;
 import tacos.domain.TacoOrder;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -39,7 +37,10 @@ public class DesignTacoController {
     }
 
     @PostMapping
-    public String processTaco(@Valid Taco taco, Errors errors, @ModelAttribute TacoOrder tacoOrder) {
+    public String processTaco(
+            @Valid @ModelAttribute Taco taco,
+            Errors errors,
+            @ModelAttribute TacoOrder tacoOrder) {
         if (errors.hasErrors()) {
             return "design";
         }
@@ -51,7 +52,7 @@ public class DesignTacoController {
     @ModelAttribute
     public void addIngredientsToModel(Model model) {
         var ingredients = ingredientRepo.findAll();
-        log.info("Ингредиенты получены из БД: {}", ingredients.toString());
+        log.info("Ингредиенты получены из БД: {}", ingredients);
         filterByType(model, ingredients);
     }
 
