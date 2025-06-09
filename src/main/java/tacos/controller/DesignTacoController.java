@@ -51,7 +51,7 @@ public class DesignTacoController {
 
     @ModelAttribute
     public void addIngredientsToModel(Model model) {
-        var ingredients = ingredientRepo.findAll();
+        var ingredients = (List<Ingredient>) ingredientRepo.findAll();
         log.info("Ингредиенты получены из БД: {}", ingredients);
         filterByType(model, ingredients);
     }
