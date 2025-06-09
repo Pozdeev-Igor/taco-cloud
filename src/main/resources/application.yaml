@@ -2,11 +2,17 @@ spring:
   application:
     name: taco-cloud
 
-  #  thymeleaf
+  # thymeleaf
   thymeleaf:
     cache: false
 
-  cassandra:
-    schema-action: recreate
-    local-datacenter: datacenter1
-    keyspace-name: tacocloud
+# БД
+  data:
+    mongodb:
+      port: 27017
+      database: tacoclouddb
+de:
+  flapdoodle:
+    mongodb:
+      embedded:
+        version: 6.0.5
