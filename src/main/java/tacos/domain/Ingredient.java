@@ -1,17 +1,23 @@
 package tacos.domain;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
-@Data
-@NoArgsConstructor
-@Document(collection = "ingredients")
+@RequiredArgsConstructor
+@Entity
+@Setter
+@Getter
 public class Ingredient {
 
     @Id
     private String id;
     private String name;
+
+    @Enumerated(EnumType.STRING)
     private IngredientType type;
 }

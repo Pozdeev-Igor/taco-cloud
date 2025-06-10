@@ -7,12 +7,20 @@ spring:
     cache: false
 
 # БД
-  data:
-    mongodb:
-      port: 27017
-      database: tacoclouddb
-de:
-  flapdoodle:
-    mongodb:
-      embedded:
-        version: 6.0.5
+  datasource:
+    generate-unique-name: false
+    name: tacocloud
+    password: sa
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop  # Создаёт таблицы при старте, удаляет при завершении
+    show-sql: true
+    sql:
+      init:
+        mode: always  # Гарантирует выполнение import.sql
+      defer-datasource-initialization: true  # Ждёт создания таблиц
+
+  logging:
+    level:
+      org.springframework.jdbc.datasource.init: DEBUG
