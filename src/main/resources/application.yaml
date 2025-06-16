@@ -10,7 +10,7 @@ spring:
   datasource:
     generate-unique-name: false
     name: tacocloud
-    password: sa
+    password: ${DB_PASSWORD}
 
   jpa:
     hibernate:
@@ -24,3 +24,12 @@ spring:
   logging:
     level:
       org.springframework.jdbc.datasource.init: DEBUG
+
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: ${GITHUB_CLIENT_ID}
+            clientSecret: ${GITHUB_CLIENT_SECRET}
+            scope: email, public_profile
