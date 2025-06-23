@@ -21,15 +21,11 @@ spring:
         mode: always  # Гарантирует выполнение import.sql
       defer-datasource-initialization: true  # Ждёт создания таблиц
 
-  logging:
-    level:
-      org.springframework.jdbc.datasource.init: DEBUG
-
   security:
     oauth2:
       client:
         registration:
           github:
-            clientId: ${GITHUB_CLIENT_ID}
-            clientSecret: ${GITHUB_CLIENT_SECRET}
+            client-id: ${GITHUB_CLIENT_ID}
+            client-secret: ${GITHUB_CLIENT_SECRET}
             scope: email, public_profile
