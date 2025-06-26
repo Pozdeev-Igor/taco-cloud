@@ -1,0 +1,10 @@
+INSERT INTO ingredient VALUES ('FLTO', 'Flour Tortilla', 'WRAP');
+INSERT INTO ingredient VALUES ('COTO', 'Corn Tortilla', 'WRAP');
+INSERT INTO ingredient VALUES ('GRBF', 'Ground Beef', 'PROTEIN');
+INSERT INTO ingredient VALUES ('CARN', 'Carnitas', 'PROTEIN');
+INSERT INTO ingredient VALUES ('TMTO', 'Diced Tomatoes', 'VEGGIES');
+INSERT INTO ingredient VALUES ('LETC', 'Lettuce', 'VEGGIES');
+INSERT INTO ingredient VALUES ('CHED', 'Cheddar', 'CHEESE');
+INSERT INTO ingredient VALUES ('JACK', 'Monterrey Jack', 'CHEESE');
+INSERT INTO ingredient VALUES ('SLSA', 'Salsa', 'SAUCE');
+INSERT INTO ingredient VALUES ('SRCR', 'Sour Cream', 'SAUCE');

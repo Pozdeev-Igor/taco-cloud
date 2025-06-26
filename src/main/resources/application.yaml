@@ -7,19 +7,23 @@ spring:
     cache: false
 
 # БД
+  sql:
+    init:
+      data-locations: classpath:data.sql
+      mode: always
   datasource:
     generate-unique-name: false
     name: tacocloud
     password: ${DB_PASSWORD}
+    url: jdbc:postgresql://localhost:5432/tacocloud
+    username: postgres
+    driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
-      ddl-auto: create-drop  # Создаёт таблицы при старте, удаляет при завершении
+      ddl-auto: create-drop
     show-sql: true
-    sql:
-      init:
-        mode: always  # Гарантирует выполнение import.sql
-      defer-datasource-initialization: true  # Ждёт создания таблиц
+    defer-datasource-initialization: true
 
   security:
     oauth2:

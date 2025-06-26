@@ -1,5 +1,6 @@
 package tacos.domain;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,4 +32,7 @@ public class Taco {
     @Size(min = 1, message = "you must choose at least 1 ingredient")
     @ManyToMany
     private List<Ingredient> ingredients = new ArrayList<>();
+
+    @Column(name = "taco_order")
+    private Long tacoOrder;
 }
