@@ -1,3 +1,10 @@
+server:
+  port: 8443
+  ssl:
+    key-store: file:///D:\Learning_projects\SPRING-IN-ACTION\taco-cloud\mykeys.jks
+    key-password: ${KEYSTORE_PASSWORD}
+    key-store-password: ${KEYSTORE_PASSWORD}
+
 spring:
   application:
     name: taco-cloud
